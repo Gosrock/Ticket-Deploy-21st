@@ -1,5 +1,5 @@
 name: Deploy to EC2
-on:
+on: workflow_dispatch
   push:
     branches:
       - main
@@ -12,10 +12,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: create env file
-        run: |
-          touch .env
-          echo "${{ secrets.ENV_VARS }}" >> .env
+      # - name: create env file
+      #   run: |
+      #     touch .env
+      #     echo "${{ secrets.ENV_VARS }}" >> .env
       - name: create remote directory
         uses: appleboy/ssh-action@master
         with:
