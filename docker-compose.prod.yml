@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  backend:
+    image: water0641/wanted-backend
+    container_name: backend
+    hostname: backend
+    ports:
+      - 5000:5000
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - 80:80
