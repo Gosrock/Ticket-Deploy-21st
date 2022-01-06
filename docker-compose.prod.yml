@@ -11,7 +11,7 @@ services:
     container_name: front
     hostname: front
     ports:
-      - 3000:3000
+      - 80:80
   nginx:
     restart: always
     build:
