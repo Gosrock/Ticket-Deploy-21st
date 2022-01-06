@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   backend:
-    image: water0641/wanted-backend
+    image: water0641/ticket-backend:main
     container_name: backend
     hostname: backend
     expose:
