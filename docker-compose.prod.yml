@@ -12,6 +12,12 @@ services:
     hostname: front
     ports:
       - 80:80
+  admin:
+    image: water0641/ticket-admin:main
+    container_name: admin
+    hostname: admin
+    ports:
+      - 80:80
   nginx:
     restart: always
     build:
