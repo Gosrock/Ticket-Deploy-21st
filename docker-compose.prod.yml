@@ -6,6 +6,12 @@ services:
     hostname: backend
     ports:
       - 5000:5000
+  front:
+    image: water0641/ticket-front:main
+    container_name: front
+    hostname: front
+    ports:
+      - 3000:3000
   nginx:
     restart: always
     build:
