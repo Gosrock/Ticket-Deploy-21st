@@ -9,8 +9,8 @@ services:
   front:
     image: water0641/ticket-front:main
     container_name: front
-    expose:
-      - "3000"
+    ports:
+      - "3000:8080"
   admin:
     image: water0641/ticket-admin:main
     container_name: admin
