@@ -17,6 +17,10 @@ services:
     expose:
       - "3100"
   nginx:
+    depends_on:
+      - backend
+      - front
+      - admin
     restart: always
     build:
       dockerfile: Dockerfile
