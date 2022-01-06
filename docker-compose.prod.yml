@@ -9,15 +9,13 @@ services:
   front:
     image: water0641/ticket-front:main
     container_name: front
-    hostname: front
-    ports:
-      - "3100:80"
+    expose:
+      - "3100"
   admin:
     image: water0641/ticket-admin:main
     container_name: admin
-    hostname: admin
-    ports:
-      - "3000:80"
+    expose:
+      - "3000"
   nginx:
     restart: always
     build:
