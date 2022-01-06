@@ -5,23 +5,23 @@ services:
     container_name: backend
     hostname: backend
     ports:
-      - 5000:5000
+      - "5000:5000"
   front:
     image: water0641/ticket-front:main
     container_name: front
     hostname: front
     ports:
-      - 3100:80
+      - "3100:80"
   admin:
     image: water0641/ticket-admin:main
     container_name: admin
     hostname: admin
     ports:
-      - 3000:80
+      - "3000:80"
   nginx:
     restart: always
     build:
       dockerfile: Dockerfile
       context: ./nginx
     ports:
-      - 80:80
+      - "80:80"
