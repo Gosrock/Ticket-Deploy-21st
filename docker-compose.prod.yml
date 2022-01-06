@@ -4,18 +4,18 @@ services:
     image: water0641/wanted-backend
     container_name: backend
     hostname: backend
-    ports:
-      - "5000:5000"
+    expose:
+      - "5000"
   front:
     image: water0641/ticket-front:main
     container_name: front
     expose:
-      - "3100"
+      - "3000"
   admin:
     image: water0641/ticket-admin:main
     container_name: admin
     expose:
-      - "3000"
+      - "3100"
   nginx:
     restart: always
     build:
