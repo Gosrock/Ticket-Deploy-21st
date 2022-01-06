@@ -1,11 +1,11 @@
 version: "3.7"
 services:
-  # backend:
-  #   image: water0641/wanted-backend
-  #   container_name: backend
-  #   hostname: backend
-  #   expose:
-  #     - "5000"
+  backend:
+    image: water0641/wanted-backend
+    container_name: backend
+    hostname: backend
+    expose:
+      - "5000"
   front:
     image: water0641/ticket-front:main
     container_name: front
