@@ -4,6 +4,11 @@ services:
     image: water0641/ticket-backend:main
     container_name: backend
     hostname: backend
+    environment:
+      MONGO_URI: ${MONGO_URI}
+      JWT_KEY_ADMIN_ACCESS: ${JWT_KEY_ADMIN_ACCESS}
+      JWT_KEY_MESSAGE: ${JWT_KEY_MESSAGE}
+      JWT_KEY_FRONT_ACCESS: ${JWT_KEY_FRONT_ACCESS}
     expose:
       - "5000"
   front:
