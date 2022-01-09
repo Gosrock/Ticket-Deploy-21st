@@ -15,7 +15,7 @@ then
 fi
 
 # Installing docker-compose if not exists
-if  type docker-compose > /dev/null
+if ! type docker-compose > /dev/null
 then
   echo "docker-compose does not exist"
   echo "Start installing docker-compose"

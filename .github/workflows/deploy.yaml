@@ -13,10 +13,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      # - name: create env file
-      #   run: |
-      #     touch .env
-      #     echo "${{ secrets.ENV_VARS }}" >> .env
+      - name: create env file
+        run: |
+          touch .env
+          echo "${{ secrets.ENV_VARS }}" >> .env
       - name: create remote directory
         uses: appleboy/ssh-action@master
         with:
@@ -53,5 +53,6 @@ jobs:
             export JWT_KEY_FRONT_ACCESS=${{ secrets.JWT_KEY_FRONT_ACCESS }}
             sh /home/ubuntu/srv/ubuntu/deploy.sh
             echo "start docker-compose up: ubuntu"
+            sudo docker-compose -v
             sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml pull
-            sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml up --build -d
+            sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml --env-file /home/ubuntu/srv/ubuntu/.env up --build -d
