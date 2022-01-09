@@ -23,13 +23,13 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ubuntu
           key: ${{ secrets.KEY }}
-          script: mkdir -p /home/ubuntu/srv/ubuntu
+          script: mkdir -p ~/srv/ubuntu
 
       - name: copy source via ssh key
         uses: burnett01/rsync-deployments@4.1
         with:
           switches: -avzr --delete
-          remote_path: /home/ubuntu/srv/ubuntu/
+          remote_path: ~/srv/ubuntu/
           remote_host: ${{ secrets.HOST }}
           remote_user: ubuntu
           remote_key: ${{ secrets.KEY }}
@@ -51,8 +51,9 @@ jobs:
             export JWT_KEY_ADMIN_ACCESS=${{ secrets.JWT_KEY_ADMIN_ACCESS }}
             export JWT_KEY_MESSAGE=${{ secrets.JWT_KEY_MESSAGE }}
             export JWT_KEY_FRONT_ACCESS=${{ secrets.JWT_KEY_FRONT_ACCESS }}
-            sh /home/ubuntu/srv/ubuntu/deploy.sh
+            sh ~/srv/ubuntu/deploy.sh
             echo "start docker-compose up: ubuntu"
             sudo docker-compose -v
-            sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml pull
-            sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml --env-file /home/ubuntu/srv/ubuntu/.env up --build -d
+            cat ~/srv/ubuntu/.env
+            sudo docker-compose -f ~/srv/ubuntu/docker-compose.prod.yml pull
+            sudo docker-compose -f ~/srv/ubuntu/docker-compose.prod.yml --env-file ~/srv/ubuntu/.env up --build -d
