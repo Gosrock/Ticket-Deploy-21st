@@ -25,4 +25,4 @@ fi
 
 echo "start docker-compose up: ubuntu"
 sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml pull
-sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml --env-file .env --build -d up
+sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml --env-file .env up --build -d
