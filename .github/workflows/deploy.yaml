@@ -52,3 +52,6 @@ jobs:
             export JWT_KEY_MESSAGE=${{ secrets.JWT_KEY_MESSAGE }}
             export JWT_KEY_FRONT_ACCESS=${{ secrets.JWT_KEY_FRONT_ACCESS }}
             sh /home/ubuntu/srv/ubuntu/deploy.sh
+            echo "start docker-compose up: ubuntu"
+            sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml pull
+            sudo docker-compose -f /home/ubuntu/srv/ubuntu/docker-compose.prod.yml up --build -d
