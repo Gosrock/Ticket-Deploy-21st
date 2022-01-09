@@ -40,6 +40,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ubuntu
           key: ${{ secrets.KEY }}
+          envs: MONGO_URI,JWT_KEY_ADMIN_ACCESS,JWT_KEY_MESSAGE,JWT_KEY_FRONT_ACCESS
           script: |
             export  $(xargs < ${{ secrets.ENV_VARS }})
             sh /home/ubuntu/srv/ubuntu/deploy.sh
