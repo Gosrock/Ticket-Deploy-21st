@@ -41,4 +41,8 @@ jobs:
           username: ubuntu
           key: ${{ secrets.KEY }}
           script: |
+            export MONGO_URI=${{ secrets.MONGO_URI }}
+            export JWT_KEY_ADMIN_ACCESS=${{ secrets.JWT_KEY_ADMIN_ACCESS }}
+            export JWT_KEY_MESSAGE=${{ secrets.JWT_KEY_MESSAGE }}
+            export JWT_KEY_FRONT_ACCESS=${{ secrets.JWT_KEY_FRONT_ACCESS }}
             sh /home/ubuntu/srv/ubuntu/deploy.sh
