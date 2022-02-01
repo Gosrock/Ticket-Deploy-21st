@@ -23,3 +23,8 @@ then
   sudo chmod +x /usr/local/bin/docker-compose
 fi
 
+
+# aws log setting
+  sudo systemctl daemon-reload
+  sudo service docker restart
+

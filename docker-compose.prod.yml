@@ -15,6 +15,12 @@ services:
       - NAVER_CALLER=${NAVER_CALLER}
     expose:
       - "5000"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: "gosrock-backend-log"
+        awslogs-region: "ap-northeast-2"
+        awslogs-stream: "backend"
   front:
     image: water0641/ticket-front:main
     container_name: front
