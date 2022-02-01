@@ -33,17 +33,14 @@ jobs:
           remote_host: ${{ secrets.HOST }}
           remote_user: ubuntu
           remote_key: ${{ secrets.KEY }}
-
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
-        env:
         with:
           host: ${{ secrets.HOST }}
           username: ubuntu
           key: ${{ secrets.KEY }}
           envs:
           script: |
-            # 로그그룹 설정을 위함
             sh ~/srv/ubuntu/deploy.sh
             echo "start docker-compose up: ubuntu"
             sudo docker-compose -v
