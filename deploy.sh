@@ -24,7 +24,7 @@ then
 fi
 
 
-# aws log setting
-  sudo systemctl daemon-reload
-  sudo service docker restart
+# # aws log setting
+#   sudo systemctl daemon-reload
+#   sudo service docker restart
 

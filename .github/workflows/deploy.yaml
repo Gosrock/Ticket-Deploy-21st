@@ -37,18 +37,13 @@ jobs:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         env:
-          # 로그그룹 설정을 위함
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         with:
           host: ${{ secrets.HOST }}
           username: ubuntu
           key: ${{ secrets.KEY }}
-          envs: AWS_SECRET_ACCESS_KEY,
+          envs:
           script: |
             # 로그그룹 설정을 위함
-            export AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}
-            export JWT_KEY_ADMIN_ACCESS=${{ secrets.JWT_KEY_ADMIN_ACCESS }}
             sh ~/srv/ubuntu/deploy.sh
             echo "start docker-compose up: ubuntu"
             sudo docker-compose -v
