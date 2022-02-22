@@ -13,6 +13,7 @@ services:
       - NAVER_ACCESS_KEY=${NAVER_ACCESS_KEY}
       - NAVER_SECRET_KEY=${NAVER_SECRET_KEY}
       - NAVER_CALLER=${NAVER_CALLER}
+      - GOSROCK_CODE=${GOSROCK_CODE}
     expose:
       - "5000"
     logging:
