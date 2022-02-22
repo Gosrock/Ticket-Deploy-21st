@@ -28,7 +28,7 @@ services:
     ports:
       - "3000:3000"
   admin:
-    image: water0641/ticket-admin:1.1.0
+    image: water0641/ticket-admin:1.1.2
     container_name: admin
     expose:
       - "3100"
