@@ -29,14 +29,14 @@ ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 react build 된 결과물을 nginx를 웹서버로 활용해서 도커이미지로 빌드합니다.
 
-##배포
+## 배포
 main branch에 push 액션이 들어오게 되면 github action을 동작시킵니다.
 초기 [deploy.sh](https://github.com/Gosrock/Ticket-Deploy/blob/main/deploy.sh) 파일에서 도커가 깔려있는지 확인과 설치를 진행하고, ssh 커맨드를 통해 docker-compose를 실행시킵니다.
 
-##환경변수
+## 환경변수
 환경변수는 .env 파일 형태로 전달합니다.
 github setting 에서 env를 설정한뒤에 해당 env들을 파일형태로 action이 실행되었을때 넘겨줍니다.
 
-##로깅
+## 로깅
 로깅은 aws cloudwatch 와 awslogger을 사용합니다.
 [관련 포스팅](https://devnm.tistory.com/8)
