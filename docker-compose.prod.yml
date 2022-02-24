@@ -23,7 +23,7 @@ services:
         awslogs-region: "ap-northeast-2"
         awslogs-stream: "backend"
   front:
-    image: water0641/ticket-front:main
+    image: water0641/ticket-front:1.1.0
     container_name: front
     ports:
       - "3000:3000"
