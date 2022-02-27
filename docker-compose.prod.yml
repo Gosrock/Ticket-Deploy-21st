@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   backend:
-    image: water0641/ticket-backend:1.1.2
+    image: water0641/ticket-backend:1.1.3
     container_name: backend
     hostname: backend
     environment:
@@ -23,7 +23,7 @@ services:
         awslogs-region: "ap-northeast-2"
         awslogs-stream: "backend"
   front:
-    image: water0641/ticket-front:1.1.0
+    image: water0641/ticket-front:1.1.3
     container_name: front
     ports:
       - "3000:3000"
